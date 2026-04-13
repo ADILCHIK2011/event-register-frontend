@@ -1,4 +1,4 @@
-const API = "gracious-motivation-production.up.railway.app";
+const API = "https://gracious-motivation-production.up.railway.app";
 
 const ism = document.getElementById("ism");
 const familiya = document.getElementById("familiya");
