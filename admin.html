@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-base-200">
+
+  <!-- LOGIN SAHIFASI -->
+  <div id="loginPage" class="min-h-screen flex items-center justify-center">
+    <div class="card w-full max-w-sm bg-base-100 shadow-sm border border-base-200">
+      <div class="card-body gap-4">
+        <h2 class="card-title text-xl justify-center">Admin kirish</h2>
+
+        <label class="form-control w-full">
+          <div class="label"><span class="label-text">Username</span></div>
+          <input id="loginUsername" type="text" placeholder="admin" class="input input-bordered w-full"/>
+        </label>
+
+        <label class="form-control w-full">
+          <div class="label"><span class="label-text">Parol</span></div>
+          <input id="loginPassword" type="password" placeholder="••••••" class="input input-bordered w-full"/>
+        </label>
+
+        <div id="loginError" class="hidden alert alert-error text-sm py-2"></div>
+
+        <button id="loginBtn" class="btn btn-primary w-full">Kirish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div id="dashboardPage" class="hidden">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 border-b border-base-200 px-6">
+      <div class="flex-1">
+        <span class="text-lg font-semibold">Admin Panel</span>
+      </div>
+      <div class="flex-none gap-3">
+        <span id="adminName" class="text-sm text-base-content/50"></span>
+        <button id="logoutBtn" class="btn btn-sm btn-ghost">Chiqish</button>
+      </div>
+    </div>
+
+    <div class="p-6 max-w-5xl mx-auto">
+
+      <!-- Event qo'shish -->
+      <div class="card bg-base-100 border border-base-200 shadow-sm mb-8">
+        <div class="card-body">
+          <h3 class="font-semibold text-base mb-4">Yangi event qo'shish</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="form-control">
+              <div class="label"><span class="label-text">Event nomi</span></div>
+              <input id="eventName" type="text" placeholder="Veb-dasturlash bootcamp" class="input input-bordered"/>
+            </label>
+            <label class="form-control">
+              <div class="label"><span class="label-text">Vaqti</span></div>
+              <input id="eventDate" type="datetime-local" class="input input-bordered"/>
+            </label>
+            <label class="form-control">
+              <div class="label"><span class="label-text">Limit (max odam)</span></div>
+              <input id="eventLimit" type="number" placeholder="50" class="input input-bordered"/>
+            </label>
+            <label class="form-control">
+              <div class="label"><span class="label-text">Lokatsiya</span></div>
+              <input id="eventLocation" type="text" placeholder="Toshkent, IT Park" class="input input-bordered"/>
+            </label>
+          </div>
+          <div class="mt-4">
+            <button id="senButton" class="btn btn-primary">Event qo'shish</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eventlar ro'yxati -->
+      <h3 class="font-semibold text-base mb-4">Barcha eventlar</h3>
+      <div id="allEvents" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </div>
+  </div>
+
+  <!-- Members Modal -->
+  <dialog id="membersModal" class="modal">
+    <div class="modal-box w-11/12 max-w-2xl">
+      <h3 class="font-semibold text-lg mb-4" id="modalTitle">Memberlar</h3>
+      <div id="modalBody"></div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Yopish</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+
+  <script src="admin.js"></script>
+</body>
+</html>

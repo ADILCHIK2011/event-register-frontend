@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ro'yxatdan o'tish</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-base-200 flex items-center justify-center p-4">
+
+  <div class="card w-full max-w-md bg-base-100 shadow-sm border border-base-200">
+    <div class="card-body gap-4">
+
+      <div class="text-center mb-2">
+        <h2 class="card-title text-xl justify-center">Eventga ro'yxatdan o'tish</h2>
+        <p class="text-sm text-base-content/50 mt-1">Quyidagi ma'lumotlarni to'ldiring</p>
+      </div>
+
+      <label class="form-control w-full">
+        <div class="label"><span class="label-text">Ism</span></div>
+        <input id="ism" type="text" placeholder="Islom" class="input input-bordered w-full" />
+      </label>
+
+      <label class="form-control w-full">
+        <div class="label"><span class="label-text">Familiya</span></div>
+        <input id="familiya" type="text" placeholder="Karimov" class="input input-bordered w-full" />
+      </label>
+
+      <label class="form-control w-full">
+        <div class="label"><span class="label-text">Telefon raqami</span></div>
+        <input id="telefon" type="text" placeholder="+998 90 123 45 67" class="input input-bordered w-full" />
+      </label>
+
+      <label class="form-control w-full">
+        <div class="label"><span class="label-text">Event tanlang</span></div>
+        <select id="eventSelect" class="select select-bordered w-full">
+          <option disabled selected value="">-- Yuklanmoqda... --</option>
+        </select>
+      </label>
+
+      <div id="alertBox" class="hidden"></div>
+
+      <button id="submitBtn" class="btn btn-primary w-full mt-2">
+        Ro'yxatdan o'tish
+      </button>
+
+    </div>
+  </div>
+
+  <script src="member.js"></script>
+</body>
+</html>
